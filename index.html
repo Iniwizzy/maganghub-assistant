@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download MagangHub Assistant</title>
+<meta name="description" content="Ekstensi browser untuk peserta magang MagangHub: laporan harian dari 1 kalimat dengan Gemini, plus pengingat lewat browser dan WhatsApp. Download dan panduan pasang.">
+<link rel="icon" href="logo.png">
+<style>
+  :root {
+    --bg: #eef3fb; --surface: #ffffff; --ink: #111827; --ink2: #374151; --muted: #5b6472;
+    --line: #dfe4ec; --blue: #1d5fd6; --blue-ink: #ffffff; --blue-weak: #e3ebfb;
+    --amber: #f6b60b; --amber-weak: #fff4d6; --amber-ink: #5c4300; --code: #f4f6fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1522; --surface: #172033; --ink: #eef2f8; --ink2: #c9d1de; --muted: #9aa5b5;
+      --line: #2a3650; --blue: #6c9cff; --blue-ink: #0b1220; --blue-weak: #1d2a47;
+      --amber: #f6b60b; --amber-weak: #3a2f12; --amber-ink: #f8d77a; --code: #111a2b;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.6 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  }
+  a { color: var(--blue); }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 20px 0; }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 18px; }
+  .brand img { width: 40px; height: 40px; border-radius: 10px; display: block; }
+  .chip { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; }
+
+  .hero { padding: 28px 0 8px; }
+  h1 { font-size: clamp(30px, 6vw, 46px); line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 14px; text-wrap: balance; }
+  .lead { font-size: 18px; color: var(--ink2); margin: 0 0 24px; max-width: 640px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 22px; border-radius: 12px; font-weight: 700; font-size: 17px; text-decoration: none; }
+  .btn-primary { background: var(--blue); color: var(--blue-ink); }
+  .btn-ghost { color: var(--ink); border: 1px solid var(--line); background: var(--surface); }
+  .meta { font-size: 14px; color: var(--muted); margin-top: 12px; }
+  .notice { margin: 24px 0 0; padding: 14px 16px; border-radius: 12px; background: var(--amber-weak); color: var(--amber-ink); font-size: 15px; }
+
+  .shot { margin: 32px 0 8px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
+  .shot img { display: block; width: 100%; height: auto; }
+
+  section { padding: 28px 0 4px; }
+  h2 { font-size: 24px; margin: 0 0 16px; letter-spacing: -0.01em; }
+  ol.steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 12px; }
+  ol.steps > li { counter-increment: s; position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px 16px 68px; }
+  ol.steps > li::before { content: counter(s); position: absolute; left: 18px; top: 16px; width: 34px; height: 34px; border-radius: 50%; background: var(--blue); color: var(--blue-ink); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  ol.steps strong { display: block; font-size: 17px; margin-bottom: 2px; }
+  ol.steps p { margin: 4px 0 0; color: var(--ink2); }
+  code { font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 0.92em; background: var(--code); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; overflow-wrap: anywhere; }
+  .warn { color: var(--ink); font-weight: 600; }
+
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 0 18px; margin-bottom: 10px; }
+  summary { cursor: pointer; padding: 16px 0; font-weight: 700; }
+  details > div { padding: 0 0 16px; color: var(--ink2); }
+  details ol, details ul { margin: 0; padding-left: 20px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  td { padding: 10px 8px; border-top: 1px solid var(--line); vertical-align: top; }
+  td:first-child { font-weight: 600; color: var(--ink); width: 38%; }
+
+  footer { padding: 36px 0 48px; color: var(--muted); font-size: 14px; }
+  footer p { margin: 6px 0; }
+
+  @media (max-width: 520px) {
+    .btn { width: 100%; justify-content: center; }
+    ol.steps > li { padding-left: 60px; }
+    ol.steps > li::before { left: 14px; }
+    td:first-child { width: 44%; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><img src="logo.png" alt=""><span>MagangHub Assistant</span><span class="chip">v1.0.0</span></div>
+  </header>
+
+  <div class="hero">
+    <h1>Laporan harian MagangHub dari 1 kalimat</h1>
+    <p class="lead">Ekstensi browser gratis untuk peserta magang. Gemini menulis tiga kolom laporan, kamu periksa, lalu sekali klik masuk ke form. Ada pengingat lewat notifikasi browser dan WhatsApp juga.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="maganghub-assistant-v1.0.0.zip" download>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+        Download ekstensi
+      </a>
+      <a class="btn btn-ghost" href="PANDUAN-PASANG.md">Panduan lengkap</a>
+    </div>
+    <p class="meta">v1.0.0 · 34,7 KB · Chrome atau Edge di laptop/PC</p>
+    <p class="notice">Sedang direview di Microsoft Edge Add-ons. Sambil menunggu, pasang manual dengan langkah di bawah.</p>
+  </div>
+
+  <div class="shot"><img src="screenshot.png" alt="Popup MagangHub Assistant menampilkan tiga kolom laporan hasil AI" width="1280" height="800"></div>
+
+  <section>
+    <h2>Pasang dalam 6 langkah</h2>
+    <ol class="steps">
+      <li><strong>Download dan ekstrak</strong><p>Klik <em>Download ekstensi</em>, lalu ekstrak zip-nya (Windows: klik kanan → <em>Extract All…</em>) ke folder tetap, misalnya <code>Documents\MagangHub Assistant</code>. <span class="warn">Jangan hapus atau pindahkan folder ini nanti.</span></p></li>
+      <li><strong>Buka halaman ekstensi</strong><p>Ketik <code>chrome://extensions</code> (Chrome) atau <code>edge://extensions</code> (Edge) di address bar.</p></li>
+      <li><strong>Nyalakan Developer mode</strong><p>Chrome: sakelar di kanan atas. Edge: sakelar di panel kiri bawah. Di browser berbahasa Indonesia namanya kurang lebih <em>Mode pengembang</em>.</p></li>
+      <li><strong>Klik Load unpacked</strong><p>Pilih folder hasil ekstrak, yang di dalamnya langsung ada <code>manifest.json</code>. Lalu sematkan ikonnya lewat ikon puzzle di toolbar.</p></li>
+      <li><strong>Tempel API key Gemini</strong><p>Buat key gratis di <a href="https://aistudio.google.com/apikey" rel="noopener">aistudio.google.com/apikey</a>. Di ekstensi: tab <em>Pengaturan</em> → tempel → <em>Simpan &amp; tes koneksi</em>.</p></li>
+      <li><strong>Hubungkan WhatsApp (opsional)</strong><p>Tab <em>Pengingat</em> → <em>Hubungkan WhatsApp</em> → kirim pesan DAFTAR yang muncul. Balas <em>sudah</em> untuk berhenti hari itu, <em>STOP</em> untuk berhenti total.</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Setiap hari</h2>
+    <ol class="steps">
+      <li><strong>Buka form laporan hari ini</strong><p>Login ke monev.maganghub.kemnaker.go.id seperti biasa.</p></li>
+      <li><strong>Tulis 1 kalimat</strong><p>Tab <em>Laporan</em> → ceritakan kegiatanmu → <em>Buat laporan dengan AI</em>. Tiga kolom muncul, masing-masing lebih dari 100 karakter.</p></li>
+      <li><strong>Periksa, lalu isi ke form</strong><p>Edit seperlunya, klik <em>Isi ke form MagangHub</em>.</p></li>
+      <li><strong>Kirim sendiri</strong><p>Baca ulang di MagangHub, centang pernyataan, klik <em>Simpan dan Kirim</em>. Ekstensi tidak pernah mengirim laporan untukmu.</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Lainnya</h2>
+    <details>
+      <summary>Update ke versi baru</summary>
+      <div><ol><li>Download zip versi baru.</li><li>Ekstrak ke <strong>folder yang sama</strong>, timpa file lama. Folder harus sama supaya pengaturan dan sambungan WhatsApp tidak hilang.</li><li>Di halaman ekstensi, klik tombol muat ulang (panah melingkar) di kartu MagangHub Assistant.</li></ol></div>
+    </details>
+    <details>
+      <summary>Pindah ke versi toko setelah rilis</summary>
+      <div><ol><li>Kalau WhatsApp terhubung: tab <em>Pengingat</em> → <em>Putuskan dan hapus nomor dari server</em>.</li><li>Hapus versi manual (<em>Remove</em>) dan foldernya.</li><li>Pasang dari Microsoft Edge Add-ons, isi API key dan hubungkan WhatsApp lagi.</li></ol><p>Jangan pasang dua versi sekaligus, karena pengingat bisa dobel.</p></div>
+    </details>
+    <details>
+      <summary>Masalah umum</summary>
+      <div><table>
+        <tr><td>"Manifest file is missing or unreadable"</td><td>Folder yang dipilih salah. Pilih folder yang langsung berisi <code>manifest.json</code>.</td></tr>
+        <tr><td>Ekstensi error setelah folder dipindah</td><td>Ekstrak lagi ke folder yang sama, lalu klik muat ulang.</td></tr>
+        <tr><td>Peringatan soal ekstensi mode pengembang</td><td>Biasa untuk ekstensi yang dipasang manual. Tutup saja, jangan pilih menonaktifkan.</td></tr>
+        <tr><td>Tes koneksi Gemini gagal</td><td>Salin ulang API key. Kalau soal kuota atau model sibuk, coba <em>Hemat</em> atau tunggu sebentar.</td></tr>
+        <tr><td><em>Isi ke form</em> tidak mengisi</td><td>Pastikan form laporan hari ini terbuka di tab aktif, atau pakai tombol <em>Salin</em>.</td></tr>
+        <tr><td>Notifikasi tidak muncul</td><td>Izinkan notifikasi untuk browser di pengaturan sistem.</td></tr>
+      </table></div>
+    </details>
+    <details>
+      <summary>Cek keaslian file (SHA-256)</summary>
+      <div><p><code>1cca1d0d11be3fcf93cda94a44eb62c4f28f69457f1b01b81e1f3cdb2542989d</code></p><p>Windows PowerShell: <code>Get-FileHash .\maganghub-assistant-v1.0.0.zip -Algorithm SHA256</code></p></div>
+    </details>
+    <details>
+      <summary>Privasi</summary>
+      <div><p>API key dan teks laporan disimpan di browser-mu. Teks aktivitas hanya dikirim ke Google Gemini saat kamu menekan <em>Buat laporan dengan AI</em>. Nomor WhatsApp hanya disimpan kalau kamu menghubungkan WhatsApp, dan bisa dihapus kapan saja. Ekstensi hanya berjalan di monev.maganghub.kemnaker.go.id.</p><p><a href="https://script.google.com/macros/s/AKfycbxAWKs0sjiFAL4atwmuKfHf1KgiOPyplGoEfVtnBrTnen7JtFloSUxN4flhgJOt1i_v5A/exec?page=privacy" rel="noopener">Baca kebijakan privasi lengkap</a></p></div>
+    </details>
+  </section>
+
+  <footer>
+    <p>Ekstensi independen, tidak berafiliasi dengan Kemnaker atau MagangHub. Pastikan isi laporan sesuai kegiatanmu yang sebenarnya.</p>
+    <p>Dibuat oleh <a href="https://www.instagram.com/wwizzyyy/" rel="noopener">@wwizzyyy</a> · v1.0.0 · 13 November 2026</p>
+  </footer>
+</div>
+</body>
+</html>
