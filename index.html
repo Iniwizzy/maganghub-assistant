@@ -40,7 +40,9 @@
   .btn-primary { background: var(--blue); color: var(--blue-ink); }
   .btn-ghost { color: var(--ink); border: 1px solid var(--line); background: var(--surface); }
   .meta { font-size: 14px; color: var(--muted); margin-top: 12px; }
-  .notice { margin: 24px 0 0; padding: 14px 16px; border-radius: 12px; background: var(--amber-weak); color: var(--amber-ink); font-size: 15px; }
+  .meta a { white-space: nowrap; }
+  .notice { margin: 24px 0 0; padding: 14px 16px; border-radius: 12px; background: var(--blue-weak); color: var(--ink); font-size: 15px; }
+  .sub { margin: -6px 0 16px; color: var(--ink2); }
 
   .shot { margin: 32px 0 8px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
   .shot img { display: block; width: 100%; height: auto; }
@@ -84,22 +86,26 @@
     <h1>Laporan harian MagangHub dari 1 kalimat</h1>
     <p class="lead">Ekstensi browser gratis untuk peserta magang. Gemini menulis tiga kolom laporan, kamu periksa, lalu sekali klik masuk ke form. Ada pengingat lewat notifikasi browser dan WhatsApp juga.</p>
     <div class="actions">
-      <a class="btn btn-primary" href="maganghub-assistant-v1.0.0.zip" download>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
-        Download ekstensi
+      <a class="btn btn-primary" href="https://microsoftedge.microsoft.com/addons/detail/peknndhcccnefhjjafddhchdihemhkca" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+        Pasang di Edge
       </a>
-      <a class="btn btn-ghost" href="PANDUAN-PASANG.md">Panduan lengkap</a>
+      <a class="btn btn-ghost" href="maganghub-assistant-v1.0.0.zip" download>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+        Download untuk Chrome
+      </a>
     </div>
-    <p class="meta">v1.0.0 · 34,7 KB · Chrome atau Edge di laptop/PC</p>
-    <p class="notice">Sedang direview di Microsoft Edge Add-ons. Sambil menunggu, pasang manual dengan langkah di bawah.</p>
+    <p class="meta">Edge: dari Microsoft Edge Add-ons, update otomatis. Chrome: zip v1.0.0 (34,7 KB), pasang manual. Khusus laptop/PC. <a href="PANDUAN-PASANG.md">Panduan lengkap</a></p>
+    <p class="notice"><strong>Sudah ada di Microsoft Edge Add-ons.</strong> Di Edge, klik <em>Pasang di Edge</em> lalu <em>Get</em>: tanpa Developer mode, dan versi baru masuk sendiri. Di Chrome, pasang manual dengan langkah di bawah.</p>
   </div>
 
   <div class="shot"><img src="screenshot.png" alt="Popup MagangHub Assistant menampilkan tiga kolom laporan hasil AI" width="1280" height="800"></div>
 
   <section>
-    <h2>Pasang dalam 6 langkah</h2>
+    <h2>Pasang manual di Chrome</h2>
+    <p class="sub">Pakai Edge? Cukup <a href="https://microsoftedge.microsoft.com/addons/detail/peknndhcccnefhjjafddhchdihemhkca" rel="noopener">pasang dari toko</a>, lalu lanjut ke langkah 5.</p>
     <ol class="steps">
-      <li><strong>Download dan ekstrak</strong><p>Klik <em>Download ekstensi</em>, lalu ekstrak zip-nya (Windows: klik kanan → <em>Extract All…</em>) ke folder tetap, misalnya <code>Documents\MagangHub Assistant</code>. <span class="warn">Jangan hapus atau pindahkan folder ini nanti.</span></p></li>
+      <li><strong>Download dan ekstrak</strong><p>Klik <em>Download untuk Chrome</em>, lalu ekstrak zip-nya (Windows: klik kanan → <em>Extract All…</em>) ke folder tetap, misalnya <code>Documents\MagangHub Assistant</code>. <span class="warn">Jangan hapus atau pindahkan folder ini nanti.</span></p></li>
       <li><strong>Buka halaman ekstensi</strong><p>Ketik <code>chrome://extensions</code> (Chrome) atau <code>edge://extensions</code> (Edge) di address bar.</p></li>
       <li><strong>Nyalakan Developer mode</strong><p>Chrome: sakelar di kanan atas. Edge: sakelar di panel kiri bawah. Di browser berbahasa Indonesia namanya kurang lebih <em>Mode pengembang</em>.</p></li>
       <li><strong>Klik Load unpacked</strong><p>Pilih folder hasil ekstrak, yang di dalamnya langsung ada <code>manifest.json</code>. Lalu sematkan ikonnya lewat ikon puzzle di toolbar.</p></li>
@@ -122,11 +128,11 @@
     <h2>Lainnya</h2>
     <details>
       <summary>Update ke versi baru</summary>
-      <div><ol><li>Download zip versi baru.</li><li>Ekstrak ke <strong>folder yang sama</strong>, timpa file lama. Folder harus sama supaya pengaturan dan sambungan WhatsApp tidak hilang.</li><li>Di halaman ekstensi, klik tombol muat ulang (panah melingkar) di kartu MagangHub Assistant.</li></ol></div>
+      <div><p>Versi dari Edge Add-ons update sendiri. Untuk versi yang dipasang manual:</p><ol><li>Download zip versi baru.</li><li>Ekstrak ke <strong>folder yang sama</strong>, timpa file lama. Folder harus sama supaya pengaturan dan sambungan WhatsApp tidak hilang.</li><li>Di halaman ekstensi, klik tombol muat ulang (panah melingkar) di kartu MagangHub Assistant.</li></ol></div>
     </details>
     <details>
-      <summary>Pindah ke versi toko setelah rilis</summary>
-      <div><ol><li>Kalau WhatsApp terhubung: tab <em>Pengingat</em> → <em>Putuskan dan hapus nomor dari server</em>.</li><li>Hapus versi manual (<em>Remove</em>) dan foldernya.</li><li>Pasang dari Microsoft Edge Add-ons, isi API key dan hubungkan WhatsApp lagi.</li></ol><p>Jangan pasang dua versi sekaligus, karena pengingat bisa dobel.</p></div>
+      <summary>Sudah pasang manual di Edge? Pindah ke versi toko</summary>
+      <div><ol><li>Kalau WhatsApp terhubung: tab <em>Pengingat</em> → <em>Putuskan dan hapus nomor dari server</em>.</li><li>Hapus versi manual (<em>Remove</em>) dan foldernya.</li><li><a href="https://microsoftedge.microsoft.com/addons/detail/peknndhcccnefhjjafddhchdihemhkca" rel="noopener">Pasang dari Microsoft Edge Add-ons</a>, isi API key dan hubungkan WhatsApp lagi.</li></ol><p>Jangan pasang dua versi sekaligus, karena pengingat bisa dobel. Di Chrome belum ada versi toko, jadi tetap pakai versi manual.</p></div>
     </details>
     <details>
       <summary>Masalah umum</summary>
@@ -151,7 +157,7 @@
 
   <footer>
     <p>Ekstensi independen, tidak berafiliasi dengan Kemnaker atau MagangHub. Pastikan isi laporan sesuai kegiatanmu yang sebenarnya.</p>
-    <p>Dibuat oleh <a href="https://www.instagram.com/wwizzyyy/" rel="noopener">@wwizzyyy</a> · v1.0.0 · 13 November 2026</p>
+    <p>Dibuat oleh <a href="https://www.instagram.com/wwizzyyy/" rel="noopener">@wwizzyyy</a> · v1.0.0 · 14 November 2026</p>
   </footer>
 </div>
 </body>

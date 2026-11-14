@@ -2,7 +2,9 @@
 
 Ekstensi browser untuk peserta magang MagangHub: tulis laporan harian dari 1 kalimat dengan Gemini, isi ke form dengan 1 klik, dan dapat pengingat lewat notifikasi browser dan WhatsApp.
 
-> Ekstensi ini sedang direview di Microsoft Edge Add-ons. Sambil menunggu, kamu bisa memasangnya manual dengan panduan ini. Setelah versi toko rilis, baca bagian [Pindah ke versi toko](#pindah-ke-versi-toko).
+> **Pakai Microsoft Edge?** Pasang langsung dari [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/peknndhcccnefhjjafddhchdihemhkca): klik **Get**, lalu **Add extension**. Tanpa Developer mode, dan versi baru masuk sendiri. Setelah itu lanjut ke [langkah 6](#6-atur-api-key-gemini-sekali-saja).
+>
+> Langkah 1–5 di bawah untuk **Google Chrome** (belum ada di Chrome Web Store), atau untuk Edge kalau kamu memilih pasang manual.
 
 ## Yang dibutuhkan
 
@@ -86,19 +88,21 @@ Pengingat berhenti sendiri setelah laporan hari itu terkirim.
 
 ## Update ke versi baru
 
+Versi dari Edge Add-ons update sendiri. Untuk versi yang dipasang manual:
+
 1. Download zip versi baru.
 2. Ekstrak ke **folder yang sama** dengan langkah 2, timpa file lamanya. Folder harus sama supaya pengaturan dan sambungan WhatsApp tidak hilang.
 3. Buka halaman ekstensi, lalu klik tombol muat ulang (ikon panah melingkar) di kartu MagangHub Assistant.
 
 ## Pindah ke versi toko
 
-Setelah MagangHub Assistant tersedia di Microsoft Edge Add-ons:
+Sudah pasang manual di Edge? Pindah ke versi toko supaya update datang otomatis:
 
 1. Kalau WhatsApp terhubung: popup → **Pengingat** → **Putuskan dan hapus nomor dari server**.
 2. Hapus versi manual di halaman ekstensi (**Remove**), lalu hapus foldernya.
-3. Pasang dari toko, isi API key lagi, dan hubungkan WhatsApp lagi bila perlu.
+3. Pasang dari [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/peknndhcccnefhjjafddhchdihemhkca), isi API key lagi, dan hubungkan WhatsApp lagi bila perlu.
 
-Jangan pasang dua versi sekaligus, karena pengingat bisa muncul dobel.
+Jangan pasang dua versi sekaligus, karena pengingat bisa muncul dobel. Di Chrome belum ada versi toko, jadi tetap pakai versi manual.
 
 ## Menghapus ekstensi
 
@@ -127,4 +131,4 @@ Kebijakan privasi lengkap: https://script.google.com/macros/s/AKfycbxAWKs0sjiFAL
 
 Ekstensi independen, **tidak berafiliasi dengan Kemnaker atau MagangHub**. Pastikan isi laporan sesuai dengan kegiatanmu yang sebenarnya sebelum dikirim.
 
-Dibuat oleh [@wwizzyyy](https://www.instagram.com/wwizzyyy/). Versi 1.0.0, dirilis 13 November 2026.
+Dibuat oleh [@wwizzyyy](https://www.instagram.com/wwizzyyy/). Versi 1.0.0, dirilis 14 November 2026.

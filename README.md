@@ -2,11 +2,11 @@
 
 Ekstensi browser untuk peserta magang MagangHub: tulis laporan harian dari 1 kalimat dengan Gemini, isi ke form dengan 1 klik, dan dapat pengingat lewat notifikasi browser dan WhatsApp.
 
-**[Download v1.0.0 (zip, 34,7 KB)](https://github.com/Iniwizzy/maganghub-assistant/releases/latest/download/maganghub-assistant-v1.0.0.zip)** · [Panduan pasang](PANDUAN-PASANG.md) · [Halaman download](https://iniwizzy.github.io/maganghub-assistant/)
+**[Pasang di Edge (Microsoft Edge Add-ons)](https://microsoftedge.microsoft.com/addons/detail/peknndhcccnefhjjafddhchdihemhkca)** · **[Download untuk Chrome (zip v1.0.0, 34,7 KB)](https://github.com/Iniwizzy/maganghub-assistant/releases/latest/download/maganghub-assistant-v1.0.0.zip)** · [Panduan pasang](PANDUAN-PASANG.md) · [Halaman download](https://iniwizzy.github.io/maganghub-assistant/)
 
-> Sedang direview di Microsoft Edge Add-ons. Sambil menunggu, pasang manual di Chrome atau Edge (laptop/PC).
+> **Edge:** pasang dari [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/peknndhcccnefhjjafddhchdihemhkca), tanpa Developer mode, update otomatis. **Chrome:** belum ada di Chrome Web Store, jadi pasang manual dengan langkah di bawah. Khusus laptop/PC.
 
-## Pasang singkat
+## Pasang manual (Chrome)
 
 1. Download zip, lalu ekstrak ke folder yang tidak akan kamu hapus.
 2. Buka `chrome://extensions` atau `edge://extensions`, lalu nyalakan **Developer mode**.
