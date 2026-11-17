@@ -1,1 +1,1 @@
-1cca1d0d11be3fcf93cda94a44eb62c4f28f69457f1b01b81e1f3cdb2542989d  maganghub-assistant-v1.0.0.zip
+c6ebbbdb517954461080aea5adf7811497f37db3eacd9596a750ab176dde7993  maganghub-assistant-v1.1.0.zip

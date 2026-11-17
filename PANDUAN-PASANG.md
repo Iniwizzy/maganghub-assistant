@@ -1,4 +1,4 @@
-# Panduan pasang MagangHub Assistant v1.0.0
+# Panduan pasang MagangHub Assistant v1.1.0
 
 Ekstensi browser untuk peserta magang MagangHub: tulis laporan harian dari 1 kalimat dengan Gemini, isi ke form dengan 1 klik, dan dapat pengingat lewat notifikasi browser dan WhatsApp.
 
@@ -10,23 +10,23 @@ Ekstensi browser untuk peserta magang MagangHub: tulis laporan harian dari 1 kal
 
 - Laptop atau PC dengan **Google Chrome** atau **Microsoft Edge** versi 116 ke atas (Windows, macOS, atau Linux). Tidak bisa dipasang di HP.
 - Akun peserta di [monev.maganghub.kemnaker.go.id](https://monev.maganghub.kemnaker.go.id).
-- API key Gemini gratis dari Google AI Studio (langkah 6).
+- API key Gemini gratis dari Google AI Studio, atau akun OpenRouter (langkah 6).
 - Opsional: WhatsApp, untuk pengingat yang tetap masuk walau laptop mati.
 
 ## 1. Download
 
-Unduh **`maganghub-assistant-v1.0.0.zip`** (34,7 KB).
+Unduh **`maganghub-assistant-v1.1.0.zip`** (45,7 KB).
 
 Untuk memastikan file tidak berubah (opsional), cocokkan SHA-256-nya:
 
 ```
-1cca1d0d11be3fcf93cda94a44eb62c4f28f69457f1b01b81e1f3cdb2542989d
+c6ebbbdb517954461080aea5adf7811497f37db3eacd9596a750ab176dde7993
 ```
 
 Di Windows, buka PowerShell di folder Downloads lalu jalankan:
 
 ```powershell
-Get-FileHash .\maganghub-assistant-v1.0.0.zip -Algorithm SHA256
+Get-FileHash .\maganghub-assistant-v1.1.0.zip -Algorithm SHA256
 ```
 
 ## 2. Ekstrak ke folder tetap
@@ -69,6 +69,14 @@ Kalau browser-mu berbahasa Indonesia, namanya kurang lebih **Mode pengembang**.
 3. Pilih model: **Cepat** (disarankan), **Hemat**, atau **Terbaik**.
 
 API key hanya disimpan di browser-mu dan hanya dikirim ke Google Gemini.
+
+**Atau pakai OpenRouter** (sejak v1.1.0), kalau ingin model lain seperti Gemma, Llama, DeepSeek, GPT, atau Claude tanpa menyalin key:
+
+1. Tab **Pengaturan** → **Penyedia AI** → pilih **OpenRouter**.
+2. Klik **Hubungkan OpenRouter**, lalu login atau daftar di jendela OpenRouter (gratis, bisa pakai akun Google) dan izinkan.
+3. Model bawaan **Otomatis: model gratis yang sedang tersedia** tidak butuh saldo, dengan batas 50 permintaan per hari. Model berbayar memotong saldo OpenRouter-mu.
+
+Kalau jendela login tidak kembali ke ekstensi, klik **Login dengan kode**: login di tab yang terbuka, salin kodenya, lalu tempel di popup.
 
 ## 7. Pakai setiap hari
 
@@ -131,4 +139,4 @@ Kebijakan privasi lengkap: https://script.google.com/macros/s/AKfycbxAWKs0sjiFAL
 
 Ekstensi independen, **tidak berafiliasi dengan Kemnaker atau MagangHub**. Pastikan isi laporan sesuai dengan kegiatanmu yang sebenarnya sebelum dikirim.
 
-Dibuat oleh [@wwizzyyy](https://www.instagram.com/wwizzyyy/). Versi 1.0.0, dirilis 14 November 2026.
+Dibuat oleh [@wwizzyyy](https://www.instagram.com/wwizzyyy/). Versi 1.1.0, dirilis 17 November 2026.
